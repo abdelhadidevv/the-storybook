@@ -11,33 +11,46 @@ const meta = {
     direction: "ltr",
   },
   argTypes: {
+    children: {
+      description: "Button content",
+    },
     theme: {
       control: {
         type: "radio",
       },
+      defaultValue: { summary: "filled" },
+      description: "Button variant",
       options: ["filled", "outlined", "ghost", "text"],
     },
     size: {
       control: {
         type: "radio",
       },
+      defaultValue: { summary: "large" },
+      description: "How large should the button be?",
       options: ["large", "medium", "small", "xsmall"],
     },
     round: {
       control: {
         type: "radio",
       },
+      defaultValue: { summary: "sm" },
+      description: "How rounded should the button be?",
       options: ["sm", "lg", "xl", "full"],
     },
     disabled: {
       control: {
         type: "boolean",
       },
+      defaultValue: { summary: "false" },
+      description: "Disable the button",
     },
     loading: {
       control: {
         type: "boolean",
       },
+      defaultValue: { summary: "false" },
+      description: "Show loading dots animation",
     },
   },
 } satisfies Meta<typeof Button>;
@@ -64,7 +77,6 @@ export const Outlined: Story = {
   args: {
     ...Filled.args,
     theme: "outlined",
-    size: "large",
   },
 };
 
@@ -72,7 +84,6 @@ export const Ghost: Story = {
   args: {
     ...Filled.args,
     theme: "ghost",
-    size: "large",
   },
 };
 
@@ -80,6 +91,5 @@ export const Text: Story = {
   args: {
     ...Filled.args,
     theme: "text",
-    size: "large",
   },
 };
